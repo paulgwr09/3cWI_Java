@@ -6,7 +6,6 @@ public class cesar {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
             System.out.println("1 - decrypt");
             System.out.println("2 - encrypt");
             String input = scanner.next();
@@ -14,6 +13,7 @@ public class cesar {
                 decrypt(scanner);
             } else {
                 if (input.equals("2")) {
+                    encrypt(scanner);
                 } else {
                     System.exit(0);
                 }
@@ -25,13 +25,21 @@ public class cesar {
         System.out.println("Bitte eingeben:");
         char[] a = scanner.next().toCharArray();
         System.out.println();
-        int n = 3;
+        System.out.println("Um wie viele Stellen willst du verschieben?");
+        int n = scanner.nextInt();
         for (int i = 0; i < a.length; i++) {
             a[i] = (char) (a[i] + n);
             System.out.println(a[i]);
         }
     }
-        public static void encrypt() {
-
+    public static void encrypt(Scanner scanner) {
+        System.out.println("Bitte eingeben:");
+        char[] a = scanner.next().toCharArray();
+        System.out.println("Um wie viele Stellen willst du verschieben?");
+        int n = scanner.nextInt();
+        for (int i = 0; i < a.length; i++) {
+            a[i] = (char) (a[i] + n);
+            System.out.println(a[i]);
         }
+    }
 }
