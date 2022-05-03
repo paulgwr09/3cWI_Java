@@ -1,7 +1,5 @@
 package at.gwr.project.dice;
 
-import com.sun.jdi.Value;
-
 import java.util.*;
 import java.util.Random;
 

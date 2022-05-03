@@ -22,24 +22,28 @@ public class cesar {
 
 
     public static void decrypt(Scanner scanner) {
-        System.out.println("Bitte eingeben:");
+        System.out.println("Bitte dein Wort eingeben:");
         char[] a = scanner.next().toCharArray();
         System.out.println();
         System.out.println("Um wie viele Stellen willst du verschieben?");
         int n = scanner.nextInt();
+        String s = null;
         for (int i = 0; i < a.length; i++) {
             a[i] = (char) (a[i] + n);
-            System.out.println(a[i]);
+            s = new String(a);
         }
+        System.out.println(s);
     }
     public static void encrypt(Scanner scanner) {
-        System.out.println("Bitte eingeben:");
+        System.out.println("Bitte dein Wort eingeben:");
         char[] a = scanner.next().toCharArray();
         System.out.println("Um wie viele Stellen willst du verschieben?");
         int n = scanner.nextInt();
+        String s = null;
         for (int i = 0; i < a.length; i++) {
             a[i] = (char) (a[i] + n);
-            System.out.println(a[i]);
+            s = new String(a);
         }
+        System.out.println(s);
     }
 }
