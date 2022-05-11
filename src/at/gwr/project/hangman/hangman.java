@@ -41,6 +41,8 @@ public class hangman {
                 System.out.println("Du hast es Geschafft");
             }
         }
+
+        System.out.println("Du hast das Wort leider nicht erraten. Das gesuchte Wort war: " + arr[0]);
     }
 }
 
