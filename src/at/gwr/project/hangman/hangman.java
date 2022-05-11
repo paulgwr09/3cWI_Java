@@ -8,45 +8,40 @@ public class hangman {
         start(scanner);
     }
 
+
     public static void start(Scanner scanner) {
 
-        String[] arr;
-        arr = new String[1];
-
+        String[] arr = new String[1];
         arr[0] = scanner.next();
-        int stringlength = arr[0].length();
-        for (int v = 0; v < 10; v++ ) {
-            System.out.println("|");
-        }
-        char[] word = arr[0].toCharArray();
-
-        for (int i = 0; i < stringlength; i++) {
-            System.out.print("_");
-        }
+        String wordword = new String(new char[arr[0].length()]).replace("\0", "*");
         System.out.println();
+        int round = 0;
 
-        for (int round = 0; round <= 10; round++) {
-            System.out.println();
+        while (round < 7 && wordword.contains("*")) {
             System.out.println("Dein Buchstabe bitte eingeben: ");
-
+            System.out.println(wordword);
             String letter = scanner.next();
-            char[] myChars = letter.toCharArray();
+            String letterfound = "";
 
-            for (int j=0; j<stringlength; j++) {
-                StringBuilder stringBuilder = new StringBuilder();
-                String letterfound = "";
+            for (int j=0; j<arr[0].length(); j++) {
                 if (arr[0].charAt(j) == letter.charAt(0)) {
-                    stringBuilder.append(letterfound).append(letter);
-                    System.out.print(stringBuilder);
-
+                    letterfound += letter.charAt(0);
+                } else if (wordword.charAt(j) != '*') {
+                    letterfound += arr[0].charAt(j);
                 } else {
-                    if (arr[0].charAt(j) != letter.charAt(0)) {
-                        System.out.print("");
-                    }
+                    letterfound += "*";
                 }
                 }
-
+            if (wordword.equals(letterfound)) {
+                round++;
+            } else {
+                wordword = letterfound;
+            }
+            if (wordword.equals(arr[0])) {
+                System.out.println("Du hast es Geschafft");
             }
         }
     }
+}
+
 
