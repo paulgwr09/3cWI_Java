@@ -7,14 +7,13 @@ public class hangman {
         Scanner scanner = new Scanner(System.in);
         start(scanner);
     }
-
-
     public static void start(Scanner scanner) {
 
+        System.out.print("Wort bitte eingeben: ");
         String[] arr = new String[1];
         arr[0] = scanner.next();
         String wordword = new String(new char[arr[0].length()]).replace("\0", "*");
-        System.out.println();
+        for (int m = 0; m <= 50; m++) {System.out.println();}
         int round = 0;
 
         while (round < 7 && wordword.contains("*")) {
@@ -30,8 +29,7 @@ public class hangman {
                     letterfound += arr[0].charAt(j);
                 } else {
                     letterfound += "*";
-                }
-                }
+                }}
             if (wordword.equals(letterfound)) {
                 round++;
             } else {
@@ -39,11 +37,9 @@ public class hangman {
             }
             if (wordword.equals(arr[0])) {
                 System.out.println("Du hast es Geschafft");
+                System.exit(0);
             }
         }
-
         System.out.println("Du hast das Wort leider nicht erraten. Das gesuchte Wort war: " + arr[0]);
     }
 }
-
-
