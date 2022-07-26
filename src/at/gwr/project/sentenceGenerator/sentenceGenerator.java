@@ -13,7 +13,6 @@ public class sentenceGenerator {
     static List<String> destinationList = new ArrayList<String>(Arrays.asList("nach Hause", "zur Brücke", "zum Spar"));
 
     public static void main(String[] args) {
-        Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         boolean isFinished = false;
         while (!isFinished) {

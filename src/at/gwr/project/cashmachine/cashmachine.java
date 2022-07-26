@@ -7,7 +7,6 @@ public class cashmachine {
 
         bankbalance bankbalance = new bankbalance();
         Scanner scanner = new Scanner(System.in);
-        int total = 0;
         boolean isFinished = false;
         while (!isFinished) {
             selectNum(scanner, bankbalance);

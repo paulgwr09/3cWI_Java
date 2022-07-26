@@ -1,6 +1,5 @@
 package at.gwr.project.toUpperCaseToLowerCase;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class UpperCase {
@@ -21,5 +20,7 @@ public class UpperCase {
         }
         System.out.println(answerup);
         System.out.println(answerlow);
+
+        scanner.close();
     }
 }
