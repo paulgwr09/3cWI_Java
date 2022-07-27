@@ -22,40 +22,43 @@ public class coffeemachine {
         System.out.println("5 - Bohnen nachfüllen");
         System.out.println("6 - Kaffee rauslassen");
         System.out.println("7 - Ausschalten");
-        System.out.println("Beliebige andere Taste eingeben um das System zu schließen.");
+        System.out.println("Beliebige andere Zahl eingeben um das System zu schließen.");
         System.out.println();
-        String input = scanner.next();
-        if (input.equals("1")) {
-            puton(coffee);
-        } else {
-            if (input.equals("2")) {
+        int input = scanner.nextInt();
+        switch (input) {
+            case 1:
+                puton(coffee);
+            break;
+
+            case 2:
                 size(scanner, coffee);
-            } else {
-                if (input.equals("3")) {
-                    amountBeans(scanner, coffee);
-                } else {
-                    if (input.equals("4")) {
-                        waterrefill(coffee);
-                    } else {
-                        if (input.equals("5")) {
-                            beansrefill(coffee);
-                        } else {
-                            if (input.equals("6")) {
-                                letOutCoffee(coffee);
-                            } else {
-                                if (input.equals("7")) {
-                                    putoff(coffee);
-                                } else {
-                                    System.out.println("Wiedersehen");
-                                    System.exit(0);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            break;
+            
+            case 3:
+                amountBeans(scanner, coffee);
+            break;
+                
+            case 4:
+                waterrefill(coffee);
+            break;
+
+            case 5:
+                beansrefill(coffee);
+            break;
+            
+            case 6:
+                letOutCoffee(coffee);
+            break;
+
+            case 7:
+                putoff(coffee);
+            break;
+
+            default:
+                System.out.println("Wiedersehen");
+                System.exit(0);
         }
-        return input;
+        return null;
     }
 
     public static void puton(coffee coffee) {
@@ -101,7 +104,7 @@ public class coffeemachine {
     public static void letOutCoffee(coffee coffee) {
         if (coffee.getOn() == 1) {
             if (coffee.getWater() > coffee.getCoffeesize() && coffee.getBeans() > coffee.getAmount()) {
-                System.out.println("Hier ist ihr Kaffee: ⅽ[ː̠̈ː̠̠̈] ͌");
+                System.out.println("Hier ist ihr Kaffee: c[_]");
                 coffee.setWater(coffee.getWater()-coffee.getCoffeesize());
                 coffee.setBeans(coffee.getBeans()-coffee.getAmount());
                 System.out.println("In der Kaffeemaschine befinden sich noch " + coffee.getBeans() + " Bohnen.");
