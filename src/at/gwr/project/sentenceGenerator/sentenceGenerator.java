@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class sentenceGenerator {
 
     static List<String> nomeList = new ArrayList<String>(Arrays.asList("Er", "Sie", "Es"));
-    static List<String> verbList = new ArrayList<String>(Arrays.asList("geht", "lauft", "sprintet"));
+    static List<String> verbList = new ArrayList<String>(Arrays.asList("geht", "läuft", "sprintet"));
     static List<String> destinationList = new ArrayList<String>(Arrays.asList("nach Hause", "zur Brücke", "zum Spar"));
 
     public static void main(String[] args) {
@@ -64,17 +64,19 @@ public class sentenceGenerator {
     }
 
     public static void addNome(Scanner scanner) {
+        System.out.print("Das Nomen hier eingeben: ");
         String nome = scanner.next();
         String.valueOf(nomeList.add(nome));
     }
 
     public static void addVerb(Scanner scanner) {
+        System.out.print("Das Verb hier eingeben: ");
         String verb = scanner.next();
         String.valueOf(verbList.add(verb));
     }
 
     public static void addDestination(Scanner scanner) {
-        System.out.println("Zuerst das Lokaladverb eingeben und beim 2. Input der Ort.");
+        System.out.print("Zuerst das Lokaladverb eingeben und der Ort: ");
         String destination = scanner.next() + " " + scanner.next();
         String.valueOf(destinationList.add(destination));
     }
